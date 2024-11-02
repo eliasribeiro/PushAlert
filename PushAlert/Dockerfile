@@ -14,7 +14,7 @@ RUN dotnet build "PushAlert/PushAlert/PushAlert.csproj" -c Release -o /app/build
 
 # Stage 2: Publish
 FROM build as publish
-RUN dotnet publish "PushAlert/PushAlert/PushAlert.csproj" -c Release -o /app/publish
+RUN dotnet publish "PushAlert/xPushAlert/PushAlert.csproj" -c Release -o /app/publish
 
 # State 3: Run State
 FROM nginx:1.23.0-alpine
