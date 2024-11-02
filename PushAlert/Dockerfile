@@ -20,5 +20,5 @@ RUN dotnet publish "PushAlert/PushAlert/PushAlert.csproj" -c Release -o /app/pub
 FROM nginx:1.23.0-alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=publish /app/publish/wwwroot /usr/share/nginx/html
-COPY "nginx.conf" "/etc/nginx/nginx.conf"
+COPY "PushAlert/nginx.conf" "/etc/nginx/nginx.conf"
 CMD ["nginx", "-g", "daemon off;"]
