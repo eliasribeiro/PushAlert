@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PushAlert")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18dd233bea2bbd937c8e80a0081a56917e57b7b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05b2cdcb1fdc2b3e66893b9e7a6a666f1e075095")]
 [assembly: System.Reflection.AssemblyProductAttribute("PushAlert")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PushAlert")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
