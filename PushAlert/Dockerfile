@@ -5,16 +5,16 @@ WORKDIR /app
 
 # restore
 COPY . ./
-RUN dotnet restore "PushAlert.csproj"
+RUN dotnet restore "PushAlertx.csproj"
 
 # build
 COPY . ./
-RUN dotnet build "PushAlert.csproj" -c Release -o /app/build
+RUN dotnet build "PushAlertx.csproj" -c Release -o /app/build
 
 
 # Stage 2: Publish
 FROM build as publish
-RUN dotnet publish "PushAlert.csproj" -c Release -o /app/publish
+RUN dotnet publish "PushAlertx.csproj" -c Release -o /app/publish
 
 # State 3: Run State
 FROM nginx:1.23.0-alpine
