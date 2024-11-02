@@ -5,20 +5,20 @@ WORKDIR /app
 
 # restore
 COPY . ./
-RUN dotnet restore "PushAlert/PushAlert/PushAlert.csproj"
+RUN dotnet restore "PushAlert.csproj"
 
 # build
 COPY . ./
-RUN dotnet build "PushAlert/PushAlert/PushAlert.csproj" -c Release -o /app/build
+RUN dotnet build "PushAlert.csproj" -c Release -o /app/build
 
 
 # Stage 2: Publish
 FROM build as publish
-RUN dotnet publish "PushAlert/xPushAlert/PushAlert.csproj" -c Release -o /app/publish
+RUN dotnet publish "PushAlert.csproj" -c Release -o /app/publish
 
 # State 3: Run State
 FROM nginx:1.23.0-alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=publish /app/publish/wwwroot /usr/share/nginx/html
-COPY "PushAlert/nginx.conf" "/etc/nginx/nginx.conf"
+COPY "nginx.conf" "/etc/nginx/nginx.conf"
 CMD ["nginx", "-g", "daemon off;"]
